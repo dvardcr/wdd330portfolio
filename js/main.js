@@ -3,42 +3,6 @@ window.onload = function () {
 
 	const tableOfContents = [
 		{
-			label: 'Week 11 Notes',
-			url: '/wdd330portfolio/week11/'
-		},
-		{
-			label: 'Week 10 Notes',
-			url: '/wdd330portfolio/week10/'
-		},
-		{
-			label: 'Week 9 Notes',
-			url: '/wdd330portfolio/week09/'
-		},
-		{
-			label: 'Week 8 Notes',
-			url: '/wdd330portfolio/week08/'
-		},
-		{
-			label: 'Week 7 Notes',
-			url: '/wdd330portfolio/week07/'
-		},
-		{
-			label: 'Week 6 Notes',
-			url: '/wdd330portfolio/week06/'
-		},
-		{
-			label: 'Week 5 Notes',
-			url: '/wdd330portfolio/week05/'
-		},
-		{
-			label: 'Week 4 Notes',
-			url: '/wdd330portfolio/week04/'
-		},
-		{
-			label: 'Week 3 Notes',
-			url: '/wdd330portfolio/week03/'
-		},
-		{
 			label: 'Week 2 Notes',
 			url: '/wdd330portfolio/week02/'
 		},
