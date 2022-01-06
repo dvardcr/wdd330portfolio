@@ -3,48 +3,48 @@ window.onload = function () {
 
 	const tableOfContents = [
 		{
-			label: 'Simon Game - Final Project',
-			url: '/WDD330Portfolio/simon/'
+			label: 'Week 11 Notes',
+			url: '/wdd330portfolio/week11/'
 		},
 		{
-			label: 'Week 10 Work',
-			url: '/WDD330Portfolio/week10/'
+			label: 'Week 10 Notes',
+			url: '/wdd330portfolio/week10/'
 		},
 		{
-			label: 'Week 9 Work',
-			url: '/WDD330Portfolio/week9/'
+			label: 'Week 9 Notes',
+			url: '/wdd330portfolio/week09/'
 		},
 		{
-			label: 'Week 8 Work',
-			url: '/WDD330Portfolio/week8/'
+			label: 'Week 8 Notes',
+			url: '/wdd330portfolio/week08/'
 		},
 		{
-			label: 'Week 7 Work',
-			url: '/WDD330Portfolio/week7/'
+			label: 'Week 7 Notes',
+			url: '/wdd330portfolio/week07/'
 		},
 		{
-			label: 'Week 6 ToDo App',
-			url: '/WDD330Portfolio/todo/'
+			label: 'Week 6 Notes',
+			url: '/wdd330portfolio/week06/'
 		},
 		{
-			label: 'Week 5 Work',
-			url: '/WDD330Portfolio/week5/'
+			label: 'Week 5 Notes',
+			url: '/wdd330portfolio/week05/'
 		},
 		{
-			label: 'Week 4 Work',
-			url: '/WDD330Portfolio/week4/'
+			label: 'Week 4 Notes',
+			url: '/wdd330portfolio/week04/'
 		},
 		{
-			label: 'Week 3 Work',
-			url: '/WDD330Portfolio/week3/'
+			label: 'Week 3 Notes',
+			url: '/wdd330portfolio/week03/'
 		},
 		{
-			label: 'Week 2 Work',
-			url: '/WDD330Portfolio/week2/'
+			label: 'Week 2 Notes',
+			url: '/wdd330portfolio/week02/'
 		},
 		{
-			label: 'Week 1 Work',
-			url: '/WDD330Portfolio/week1/'
+			label: 'Week 1 Notes',
+			url: '/wdd330portfolio/week01/'
 		}
 	];
 
