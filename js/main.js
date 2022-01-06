@@ -3,12 +3,12 @@ window.onload = function () {
 
 	const tableOfContents = [
 		{
-			label: 'Week 1 Notes',
-			url: '/wdd330portfolio/week01/'
-		},
-		{
 			label: 'Week 2 Notes',
 			url: '/wdd330portfolio/week02/'
+		},
+		{
+			label: 'Week 1 Notes',
+			url: '/wdd330portfolio/week01/'
 		}
 	];
 
@@ -19,6 +19,5 @@ window.onload = function () {
 		a.setAttribute('href', tableOfContents[i].url);
 		li.append(a);
 		list.append(li);
-		
 	}
 }
