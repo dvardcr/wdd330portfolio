@@ -1,6 +1,5 @@
-var li = document.createElement('li'),
-        anchor = document.createElement('a');
-        anchor.href = a.url;
-        anchor.text = a.name;
-        li.appendChild(anchor);
-        ul.appendChild(li);
+const toggleMenu = () => {
+    document.querySelector('#navigation').classList.toggle('display');
+}
+
+document.querySelector('#navigation').addEventListener('click', toggleMenu);
