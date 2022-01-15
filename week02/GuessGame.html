@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ninja Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        html {
+            font-family: Verdana, sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Week 2 Practice</h1>
+    <h2>Guess the Number - Game</h2>
+
+    <p>I have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. I'll tell you
+        if
+        your guess was too high or too low.</p>
+
+    <div class="form">
+        <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+    </div>
+</body>
+<script charset="utf-8">
+    /*This game is based on a game found at https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash.
+    I used it to practice and recall some functions related to the topics from this week.*/
+
+    /*All the Variables are binded below*/
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    console.log("Hey! No cheating allowed, but the correct number is " + randomNumber + ".");
+    const guesses = document.querySelector('.guesses');
+    const lastResult = document.querySelector('.lastResult');
+    const lowOrHi = document.querySelector('.lowOrHi');
+    const guessSubmit = document.querySelector('.guessSubmit');
+    const guessField = document.querySelector('.guessField');
+    let guessCount = 1;
+    let resetButton;
+
+    /* This function checks the guesses the user entered against the random number.
+    It also counts the number of guesses.
+    It displays the guessed number.*/
+
+    function checkGuess() {
+        const userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+            guesses.textContent = 'Previous guesses: ';
+        }
+
+        guesses.textContent += userGuess + ' ';
+
+        /*The user is given a number of replies based on their input.*/
+
+        if (userGuess === randomNumber && guessCount === 1) {
+            lastResult.textContent = 'Congratulations! That is correct! But... are you cheating?';
+            /*I added this option in case the player cheats by using the console to try to find the answer.*/
+            lastResult.style.color = 'blue';
+            setGameOver();
+        } else if (userGuess === randomNumber) {
+            lastResult.textContent = 'Congratulations! That is correct!';
+            lastResult.style.backgroundColor = 'green';
+            lowOrHi.textContent = '';
+            setGameOver();
+        } else if (guessCount === 10) {
+            lastResult.textContent = '~~~GAME OVER~~~';
+            lowOrHi.textContent = '';
+            alert(`The correct answer is: ${randomNumber}`)
+            setGameOver();
+        } else {
+            lastResult.textContent = 'Not quite right... Please try again';
+            lastResult.style.backgroundColor = 'red';
+            if (userGuess < randomNumber) {
+                lowOrHi.style.fontWeight = 'bold'
+                lowOrHi.textContent = 'Last guess was too low!';
+            } else if (userGuess > randomNumber) {
+                lowOrHi.textContent = 'Last guess was too high!';
+            }
+        }
+
+        guessCount++;
+        guessField.value = '';
+        guessField.focus();
+    }
+
+    guessSubmit.addEventListener('click', checkGuess);
+
+    /*This funtion evaluates that the game is over and sets it for a game reset.*/
+
+    function setGameOver() {
+        guessField.disabled = true;
+        guessSubmit.disabled = true;
+        resetButton = document.createElement('button');
+        resetButton.textContent = 'Start new game';
+        document.body.appendChild(resetButton);
+        resetButton.addEventListener('click', resetGame);
+    }
+
+    /*This function resets the game to play again.*/
+
+    function resetGame() {
+        guessCount = 1;
+        const resetParas = document.querySelectorAll('.resultParas p');
+        for (const resetPara of resetParas) {
+            resetPara.textContent = '';
+        }
+
+        resetButton.parentNode.removeChild(resetButton);
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
+        guessField.focus();
+        lastResult.style.backgroundColor = 'white';
+        lastResult.style.color = 'white';
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log("Hey! No cheating allowed, but the correct number is " + randomNumber + ".");
+    }
+</script>
+
+</html>
