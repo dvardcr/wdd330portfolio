@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 1 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 2 Notes - Programming Basics, Arrays, and Functions (Chp2-4)</h1>
+        <h3 class="notes">Jan 15 2022</h3>
+    </header>
+    <main>
+        <h2>Variables</h2>
+
+        <p>Variables have to be declared before they can be used. From ES6 onwards, JavaScript uses the keywords const
+            and let to declare variables. The keyword const is used when the variable will not be reassigned to another
+            value, whereas let is used if the variable might be reassigned later in the program.</p>
+
+        <h2>Scope</h2>
+
+        <p>Scope refers to where a constant or variable is accessible by the program. There are two common scopes that
+            are often referred to in programs: global scope and local scope.</p>
+
+        <h3>Global Scope</h3>
+        <p>Any variable declared outside of a block is said to have global scope. This means it is accessible everywhere
+            in the program. While this may seem to be a good idea at first, it is not considered good practice.
+
+            <h3>Local Scope</h3>
+            <p>Any variables defined inside a block using the let or const will only be available inside that block and
+                not be accessible outside of that block. This is known as having local scope, as the variable is only
+                visible in the locality of the block.
+
+                <p>If let or const are not used, the variable will have global scope and be available outside the block.
+
+                    <h2>Converting or Parsing</h2>
+
+                    <p>The best way to change a string to a number is to use the "Number" method. This will convert the
+                        string form of a number into an actual number. The preferred way of changing a number to a
+                        string is to use the "String" function.</p>
+
+                    Template Literals
+
+                    <p>Template literals are a special types of string that were introduced in ES6. Template literals
+                        use the backtick character, `, to deliminate the string. I use Alt Gr + ] to create the back
+                        tick or back quote. I wasn't sure how to enter it in my Spanish keyboard.</p>
+
+                    <h2>Arrays</h2>
+
+                    <p>Are ordered list of values and a special built-in object.</p>
+
+                    <p>Literal<br>
+                        const myArray = [];</p>
+
+                    <p>Constructor function<br>
+                        const myArray = new Array();</p>
+
+                    <p>Adding values to the array can be done by: assigning to a specific element number. Each item in
+                        the array can be treated like a variable.</p>
+
+                    <p>array[0]="x";</p>
+
+                    <p>Adding values while creating the array.<br>
+                        const myArray = [1,"four",false,[],null];</p>
+
+                    <p>Deleting values:<br>
+                        delete myArray[0];</p>
+
+                    <p>Destructuring an array is the concept of taking values out of an array and presenting them as
+                        individual values.</p>
+
+                    <ul>
+                        <li>To remove the last item from an array, we can use the pop() method.</li>
+                        <li>The push() method appends a new value to the end of the array.</li>
+                        <li>To remove the first item from an array, we can use shift() method.</li>
+                        <li>The unshift() method appends a new value to the beginning of the array.</li>
+                    </ul>
+
+                    <p>The spread operator is three dots, ... that are placed in front of an array, with the effect of
+                        spreading out the elements of that array. This can be used to spread the elements of two arrays
+                        and put them together in a new array.</p>
+
+                    <p>myArray = [ ...myArray, ...[1,2,3]];</p>
+
+                    <p>The join() method can be used to turn the array into a string that comprises all the items in the
+                        array, separated by commas. You can choose a separator other than a comma by placing it inside
+                        the parentheses.</p>
+
+                    <p>myArray.join(' & ');</p>
+
+                    <p>The slice() method creates a subarray; starting at one position and finishing at another.</p>
+
+                    <p>The splice() method removes items from an array then inserts new items in their place.The first
+                        number in the parentheses tells us the index. The second number tells us how many items to
+                        remove from the array. Every value after this is then inserted into the array in the same place
+                        the other items were removed.</p>
+
+                    <p>myArray.splice(3, 1, "four");</p>
+
+                    <p>We can reverse the order of an array using the reverse() method. We can sort the order of an
+                        array using the sort() method. We can find out if an array contains a particular value using the
+                        indexOf() method to find the first occurrence of a value in an array. The includes() method
+                        returns a boolean value depending on whether the array contains a particular element or not. You
+                        can also add an extra parameter to indicate which index to start the search from.</p>
+
+                    <p>myArray.includes('three', 1);<p>
+
+                            <h3>Multidimensional Arrays</h3>
+                            <p>It is an array of arrays.</p>
+
+                            <p>const coordinates = [[1,3],[4,2]];<br>
+                                coordinates[0][0];</p>
+
+                            <p>The first 0 is the global index and the second 0 is the inner index. In this example, it
+                                is 1.</p>
+
+                            <h2>Sets</h2>
+
+                            <p>A set is a data structure that represents a collection of unique values, so it cannot
+                                include any duplicate values. Values can be placed into a set using the .add() method. A
+                                set can be converted into an array by placing the set, along with the spread operator
+                                directly inside an array literal.</p>
+
+                            <p>const shoppingSet = new Set().add('Apples').add('Bananas').add('Beans');<br>
+                                const shoppingArray = [...shoppingSet]</p>
+
+                            <p>It's also possible to use the Array.from() method to convert a set into an array.</p>
+
+                            <p>const shoppingArray = Array.from(shoppingSet);</p>
+
+                            <h2>Maps</h2>
+
+                            <p>Maps are a convenient way of keeping a list of key and value pairs, and are similar to
+                                'hashes', or 'hash tables' or 'dictionaries' in other programming languages.</p>
+
+                            <ul>
+                                <li>maps can use any data type as a key</li>
+                                <li>using the size property you can find the number of key-value pairs a map has</li>
+                                <li>maps are solely focused on the storage and retrieval of key-value pairs</li>
+                                <li>maps restrict you to using the get() method to retrieve any values</li>
+                            </ul>
+
+                            <p>An empty map object can be created using the new operator and Map() constructor.</p>
+
+                            <p>const romanNumerals = new Map();</p>
+
+                            <p>To look up a value, we can use the get() method. The has() method can be used to check if
+                                a particular key is in a map. Maps can be converted into a nested array of key-value
+                                pairs in a similar way to sets; using either the spread operator or the Array.from()
+                                method.</p>
+
+                            <h2>Functions</h2>
+
+                            <h3>Function Declarations</h3>
+                            <p>This starts with the function keyword and is followed by the name of the function, which
+                                in this case is called ' hello ', followed by parentheses.</p>
+
+                            <h3>Function Expressions</h3>
+                            <p>Another way of defining a function literal is to create a function expression. This
+                                assigns an anonymous function to a variable.</p>
+
+                            <p>It's not recommended to declare functions using the constructor Function() because there
+                                are numerous problems associated with placing the function body inside a string.</p>
+
+                            <h3>Arrow Functions</h3>
+                            <p>Advantages:</p>
+                            <ul>
+                                <li>They are much less verbose than normal function declarations.</li>
+                                <li>Single parameters don't need putting into parentheses.</li>
+                                <li>The body of the function doesn't need placing inside a block if it's only one line.
+                                </li>
+                                <li>The return keyword isn't required if the return statement is the only statement in
+                                    the body of the function.</li>
+                                <li>They don't bind their own value of this to the function (we'll see why this is a
+                                    particularly useful property when we cover objects later in the book).</li>
+                            </ul>
+
+                            <p>Arrow functions can be identified by the 'arrow' symbol, => that gives them their name.
+                                The parameters come before the arrow and the main body of the function comes after.
+                                Arrow functions are always anonymous, so if you want to refer to them, you must assign
+                                them to a variable.</p>
+
+                            <p>const square = x => x*x;</p>
+
+                            <h3>Callbacks</h3>
+                            <p>A function that is passed as an argument to another is known as a callback.</p>
+
+                            <p>The forEach() will loop through an array and invoke a callback function using each value
+                                as an argument.</p>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
