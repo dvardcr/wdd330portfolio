@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ninja Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        html {
+            font-family: Verdana, sans-serif;
+        }
+
+        body {
+            width: 80%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+    <script charset="utf-8" src="main.js"></script>
+</head>
+
+<body>
+    <h1>Week 3 Practice</h1>
+    <p>Please look at the JavaScript console.</p>
+    <button id="button">Click This</button>
+    <p onclick="console.log('You Clicked Me!')">Click Me</p>
+    <!---This is old code that is not used anymore--->
+    <script>
+        let button = document.querySelector('button')
+        button.addEventListener('click', function () {
+            console.log(this)
+        })
+    </script>
+
+</body>
+
+</html>

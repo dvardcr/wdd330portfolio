@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Events Examples</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: #ccc;
+            float: left;
+        }
+
+        .highlight {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p id='click'>Click On Me</p>
+    <p id='dblclick'>Double Click On Me</p>
+    <p id='mouse'>Hover On Me</p>
+    <p id='once'>A One Time Thing...</p>
+    <p>
+        <a id='broken' href='https://sitepoint.com'>Broken Link</a>
+    </p>
+
+    <ul id='list'>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    <section class='dojo'>
+        <div class='quiz-body'>
+            <header>
+                <h1>Quiz Ninja!</h1>
+            </header>
+            <div id='score'>Score: <strong>0</strong></div>
+            <div id='question'></div>
+            <div id='result'></div>
+            <div id='info'></div>
+        </div>
+    </section>
+
+    <script src='event_main.js'></script>
+</body>
+
+</html>
