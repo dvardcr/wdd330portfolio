@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 1 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 2 Notes - Programming Basics, Arrays, and Functions (Chp2-4)</h1>
+        <h3 class="notes">Jan 15 2022</h3>
+    </header>
+    <main>
+        <h2>Object Methods</h2>
+
+        <p>Objects in JS are used to contain information about users, orders, etc.
+            Any action is represented by function properties.
+            A function that is a property of an object is called its method.
+
+            <h3>This</h3>
+            To access the object, a method can use the <code>this</code> keyword.</p>
+
+        <p>this.value</p>
+
+        <p><code>this</code> is not bound which means that it can be used in any function, even if it’s not a method of
+            an object.</p>
+
+        <p>When you create a <code>new</code> instance of an object with the new keyword, <code>this</code> refers to
+            the instance.</p>
+
+        <p>Since <code>this</code> refers to the object, you can use methods to get the instance of an object.</p>
+
+        <h3>Bind</h3>
+        <p><code>bind</code> is a method that is present in every function. It allows you to change the
+            <code>this</code> context. This method takes in any number of arguments and returns the bound functio/n.
+
+            <p>All objects are mutable which means that its properties and methods can be changed or removed, and new
+                properties and methods can be added to the object, even if it was declared using <code>const</code>.</p>
+
+            <h3>Creating Objects</h3>
+
+            <p>const spiderman = {};</p>
+
+            <p>const name = 'Iron Man';<br>
+                const realName = 'Tony Stark';</p>
+
+            const ironMan = { name, realName };
+
+            <h3>Accessing Properties</h3>
+
+            <p>Bracket notation has a few advantages: it's the only way to access nonstandard property and method names
+                that don’t follow the variable naming rules. It also lets you evaluate an expression and use it as the
+                property key.</p>
+
+
+            <h3>Computed Properties</h3>
+
+            <p>JavaScript code can be placed inside square brackets and the property key will be the return value of
+                that code.</p>
+
+
+            <h3>Calling Methods</h3>
+
+            <p>To call an object’s method we can also use dot or bracket notation.</p>
+
+            <h3>Checking if Properties or Methods Exist</h3>
+
+            <p>The <code>in</code> operator can be used to check whether an object has a particular property.</p>
+
+            <p>method <code>in</code> object</p>
+
+            <code>hasOwnProperty()</code>
+
+            <p><b>IMPORTANT:</b> This method will only return any properties that belong to that particular object,
+                whereas using <code>in</code> or <code>!== undefined</code> will return true, even if the property has
+                been inherited from another object.</p>
+
+            <p>We can loop through all of an object’s properties and methods by using a <code>for in</code> loop</p>
+
+            <p>The <code>Object.keys()</code> returns an array of all the keys of any object as an argument.</p>
+
+            <p>The <code>Object.values()</code> returns an array of all the object's value.</p>
+
+            <p>The <code>Object.entries()</code> returns an array of key-value pairs.</p>
+
+            for(const [key,value] of Object.entries(superman)) {
+            console.log(`${key}: ${value}`);
+            }
+
+            <h3>Adding Properties</h3>
+
+            <p>object.key = "value";</p>
+
+            <h3>Changing Properties</h3>
+
+            <p>object["old_value"] = "new_value";</p>
+
+            <h3>Removing Properties</h3>
+
+            <p>delete object.key</p>
+
+            <h3>Nested Objects</h3>
+
+            <p>Objects that contain other objects</p>
+
+            <p>Accessed by either dot, bracket notation, or a mix</p>
+
+            <p>An object literal can be passed as a parameter to a function.</p>
+
+            <h3>Namespacing</h3>
+            <p>It is used to avoid name duplication inside a program. An object is created to contain the method or
+                properties needed and are called or accessed with <code>object.method()</code> code.</p>
+
+            <h3>JSON</h3>
+
+            <p>It is a string representation of the object literal notation. There are, however, a couple of key
+                differences:</p>
+            <ul>
+                <li>Property names must be double-quoted</li>
+                <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
+                <li>Functions are not permitted values</li>
+            </ul>
+
+            <h3>The Math Object</h3>
+            <p>It is a built-in object that has several properties representing mathematical constants, as well as
+                methods that carry out a number of common mathematical operations.</p>
+            <ul>
+                <li>Math.PI - The ratio of the circumference and diameter of a circle</li>
+                <li>Math.SQRT2 - The square root of 2</li>
+                <li>Math.SQRT1_2 - The reciprocal of the square root of 2</li>
+                <li>Math.E - Euler's constant</li>
+                <li>Math.LN2 - The natural logarithm of 2</li>
+                <li>Math.LN10 - The natural logarithm of 10</li>
+                <li>Math.LOG2E - Log base 2 of Euler's constant</li>
+                <li>Math.LOG10E - Log base 10 of Euler's constant</li>
+                <li>Math.abs() - returns the absolute value of a number</li>
+                <li>Math.ceil() - rounds a number up to the next integer</li>
+                <li>Math.floor() - rounds a number down to the next integer</li>
+                <li>Math.round() - rounds a number to the nearest integer</li>
+                <li>Math.trunc() - returns the integer</li>
+                <li>Math.exp() - raises a number to the power of Euler’s constant</li>
+                <li>Math.pow(x, y) - raises any number (x) to the power of another number (y)</li>
+                <li>Math.sqrt() - returns the positive square root of a number</li>
+                <li>Math.cbrt() - returns the cube root of numbers</li>
+                <li>Math.hypot() - returns the square root of the sum of the squares of all its arguments. It can be
+                    used to calculate the hypotenuse of a right-angled triangle</li>
+                <li>Math.log() - returns the natural logarithm of a number (Math.log2() or
+                <li>Math.log10())</li>
+                <li>Math.max() - returns the maximum number from its arguments</li>
+                <li>Math.min() - returns the minimum number from its arguments</li>
+                <li>Math.sin() - returns the sine of an angle</li>
+                <li>Math.cos() - returns the cosine of an angle</li>
+                <li>Math.tan() - returns the tangent of an angle</li>
+                <li>Math.asin() - returns the arcsine of a number. The result is an angle</li>
+                <li>Math.acos() - returns the arccosine of a number. The result is an angle</li>
+                <li>Math.atan() - returns the arctangent of a number. The result is an angle</li>
+                <li>Math.random() method is used to create random numbers</li>
+            </ul>
+            <p>Methods for the hyperbolic functions, sinh(), cosh() and tanh() were added, as well as their inverses
+                asinh(), acosh() and atanh().</p>
+
+            <h2>Regular Expressions</h2>
+
+            <p>A regular expression (RegExp) is a pattern that can be used to search strings for matches to the pattern.
+                A common use is 'find and replace' type operations.</p>
+
+            <p>test() - tests if a string contains the pattern and provides a boolean answer</p>
+            <p>exec() - returns an array containing the first match found</p>
+
+            <h2>Document Object Model (DOM)</h2>
+
+            <p>It represents an HTML document as a network of connected nodes that form a tree-like structure. The DOM
+                treats everything on a web page as a node.</p>
+
+            <ul>
+                <li>getElementById() - returns a reference to the element with a unique id attribute that is given as an
+                    argument</li>
+                <li>getElementsByTagName() - returns a live node list of all the elements with the tag name that is
+                    given as an argument</li>
+                <li>getElementsByClassName() - returns a live node list of all elements that have the class name that is
+                    supplied as an argument</li>
+            </ul>
+
+            <hr>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
