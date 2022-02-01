@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 4 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 5 - Testing and Debugging (Chp 10)</h1>
+        <h3 class="notes">Feb 5 2022</h3>
+    </header>
+    <main>
+        <h2>Testing and Debugging</h2>
+
+        <p>Because we are responsible for programming errors, we must guarantee that they are minimized and corrected as
+            soon as feasible. It may even be argued that user errors are also programmer errors, because the program
+            should be designed in such a way that the user does not make the mistake. Silent failure makes problems more
+            difficult to detect and track down.</p>
+
+        <h3>Exceptions</h3>
+        <p>An exception is an error that generates a return value that the software can use to handle the error.</p>
+
+        <h3>Stack Traces</h3>
+
+        <p>This is a series of functions or method calls that led to the error. To find the original function or method
+            that started the sequence, a stack trace will work backwards from the point where the problem occurred.</p>
+
+
+        <h3>Warnings</h3>
+
+        <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This
+            means the program will continue to run despite the warning.</p>
+
+        <h3>Strict Mode</h3>
+
+        <p>Strict mode simply requires the following string to be added to the first line of a JavaScript file, it can
+            be added inside a function: 'use strict';</p>
+        <p><b>The recommended way to invoke strict mode is to place all your code into a self-invoking function.</b></p>
+
+        <h3>Linting Tools</h3>
+        <p>Linting tools like JS Lint, JS Hint, and ES Lint can be used to test the quality of JavaScript code. They can
+            also be used to enforce programming style guidelines. Although passing a lint test does not guarantee that
+            your code is right, it does indicate that it is more consistent and less prone to errors.</p>
+
+        <h3>Feature Detection</h3>
+        <p>It is done using an if statement to check whether an object or method exists before trying to actually call
+            the method.</p>
+
+        <h3>Debugging - The Alert</h3>
+        <p><code>alert()</code> stops a program from running until OK is clicked, it allows us to effectively put
+            breakpoints in the code that let us check the value of variables at that point to see if they’re what we
+            expect them to be.</p>
+
+        <h3>Debugging - Console</h3>
+        <p>The console.log() method has already been seen and utilized. This can be used to log the value of variables
+            at various points in the program, albeit it does not stop the program from running in the same way that
+            alert does.</p>
+
+        <h3>Debugging - Online Tools</h3>
+        <p>Most current browsers now provide a debugging feature that allows you to set breakpoints in your code,
+            pausing it at specific points. You can then see and change the values of all the variables at those points.
+        </p>
+
+        <h3>Error Objects</h3>
+        <p>An <code>error</error> object can be created by the host environment when an exception occurs, or it can be
+                created in the code using a constructor function</p>
+        <p>const error = new Error('Oops, something went wrong');</p>
+        <p>There are seven more error objects used for specific errors:</p>
+
+        <ul>
+            <li><code>EvalError</code> is not used in the current ECMAScript specification and only retained for
+                backwards compatibility. It was used to identify errors when using the global <code>eval()</code>
+                function.</li>
+
+            <li><code>RangeError</code> is thrown when a number is outside an allowable range of values.</li>
+
+            <li><code>ReferenceError</code> is thrown when a reference is made to an item that doesn’t exist. For
+                example, calling a function that hasn't been defined.</li>
+
+            <li><code>SyntaxError</code> is thrown when there’s an error in the code’s syntax.</li>
+
+            <li><code>TypeError</code> is thrown when there’s an error in the type of value used; for example, a string
+                is used when a number is expected.</li>
+
+            <li><code>URIError</code> is thrown when there’s a problem encoding or decoding the URI.</li>
+
+            <li><code>InternalError</code> is a non-standard error that is thrown when an error occurs in the JavaScript
+                engine. A common cause of this too much recursion.</li>
+        </ul>
+
+        <h3>Throwing Exceptions</h3>
+        <p>It’s also possible to throw your own exceptions using the <code>throw</code> statement.</p>
+
+        <h3>Exception Handling</h3>
+        <p>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the
+            code inside the block as normal, but if an exception occurs it will pass the error object that is thrown
+            onto a catch block.</p>
+
+        <h3>Test-driven Development</h3>
+
+        <ul>
+            <ol>Write tests (that initially fail)</ol>
+
+            <ol>Write code to pass the tests</ol>
+
+            <ol>Refactor the code</ol>
+
+            <ol>Test refactored code</ol>
+
+            <ol>Write more tests for new features</ol>
+        </ul>
+
+        <p>This is often referred to as the “red-green-refactor” cycle of TDD, as failing tests usually show up as red,
+            and tests that pass show as green.</p>
+
+
+        <hr>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
