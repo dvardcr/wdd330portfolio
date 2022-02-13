@@ -1,32 +1,39 @@
-import {
-    filterTodo
-} from "./filter.js";
-import todoItemsList, {
-    toggle,
-    deleteTodo,
-    addTodo
+window.onload = function () {
+	let list = document.getElementById('table_of_contents');
+
+	const tableOfContents = [
+		{
+			label: 'Week 6 - To Do List Project',
+			url: '/wdd330portfolio/week06/'
+		},
+		{
+			label: 'Week 5 Notes',
+			url: '/wdd330portfolio/week05/'
+		},
+		{
+			label: 'Week 4 Notes',
+			url: '/wdd330portfolio/week04/'
+		},
+		{
+			label: 'Week 3 Notes',
+			url: '/wdd330portfolio/week03/'
+		},
+		{
+			label: 'Week 2 Notes',
+			url: '/wdd330portfolio/week02/'
+		},
+		{
+			label: 'Week 1 Notes',
+			url: '/wdd330portfolio/week01/'
+		}
+	];
+
+	for (var i = tableOfContents.length - 1; i >= 0; i--) {
+		let li = document.createElement('li');
+		let a = document.createElement('a');
+		a.textContent = tableOfContents[i].label;
+		a.setAttribute('href', tableOfContents[i].url);
+		li.append(a);
+		list.append(li);
+	}
 }
-from "./ls.js";
-
-//Selectors
-const todoForm = document.querySelector('.todo-form');
-const todoInput = document.querySelector('.todo-input');
-const filterOption = document.querySelector('.filter-todo');
-
-//EventListeners
-todoForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    addTodo(todoInput.value);
-});
-todoItemsList.addEventListener('click', function (event) {
-    if (event.target.type === 'checkbox') {
-        toggle(event.target.parentElement.getAttribute('data-key'));
-    }
-    if (event.target.classList.contains('delete-button')) {
-        deleteTodo(event.target.parentElement.getAttribute('data-key'));
-    }
-});
-
-filterOption.addEventListener("change", filterTodo);
-
-export default todoInput
