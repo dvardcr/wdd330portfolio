@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 7 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 7 - Functions and AJAX (Chp 11 & 13)</h1>
+        <h3 class="notes">Feb 17 2022</h3>
+    </header>
+    <main>
+
+        <h2>Further Functions</h2>
+
+        <h3>Function Properties and Methods</h3>
+
+        <p>It is important to know that all functions have a <code>length</code> property that returns the number of
+            parameters the function has.</p>
+
+        <h3>Call and Apply Methods</h3>
+
+        <p>The <code>call()</code> method can be used to set the value of <code>this</code> inside a function to an
+            object that is provided as the first argument.</p>
+
+        <h4>IMPORTANT</h4>
+        <p>If a function doesn’t refer to an object as <code>this</code> in its body, it can still be called using the
+            <code>call()</code> method, but you need provide <code>null</code> as its first argument.</p>
+
+        <h3>Custom Properties</h3>
+
+        <p>Add a <code>description</code> property to a function that describes what it does</p>
+
+        <h3>Memoization</h3>
+
+        <p>Memoization is an optimization technique that speeds up applications by storing the results of expensive
+            function calling and returning the cached result when the same inputs occur again.</p>
+
+        <h3>IIFE</h3>
+
+        <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that is
+            invoked as soon as it is defined, as the name suggests. Adding parentheses to the end of the function
+            definition is a simple way to accomplish this (remember we use parentheses to invoke a function). The
+            function must also be converted to an expression, which is accomplished by enclosing the entire declaration
+            in parentheses.</p>
+
+        <h3>Temporary Variables</h3>
+
+        <p>An IIFE can be used to swap the value of two global variables. This process requires the use of a temporary
+            variable, called <code>temp</code>, which only exists while the IIFE is invoked.</p>
+
+        <h3>Creating Self-contained Code Blocks</h3>
+
+        <p>An IIFE can be used to enclose a block of code in its own private scope, keeping it separate from the rest of
+            the program. Because IIFEs are used in this fashion, code can be introduced and removed separately.</p>
+
+        <h3>JavaScript Dynamic</h3>
+
+        <p>A function is able to not only call itself, but define itself, and even redefine itself. This is done by
+            assigning an anonymous function to a variable that has the same name as the function.</p>
+
+        <h3>Init-Time Branching</h3>
+
+        <p>This technique, together with the feature detection outlined in the previous chapter, can be used to generate
+            self-rewriting functions, often known as init-time branching. This makes the functionalities perform better
+            in the browser and eliminates the need to check for features every time they're used.</p>
+
+        <h3>Recursive Functions</h3>
+
+        <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use
+            when iterative processes are involved.</p>
+
+        <h3>Callbacks</h3>
+
+        <p>Are functions passed to other functions as arguments and then invoked inside the function they are passed to.
+        </p>
+
+        <h3>Creating A Promise</h3>
+
+        <p>A promise is created using a constructor function. This takes a function called an executor as an argument.
+            The executor initializes the promise and starts the asynchronous operation. It also accepts two functions as
+            arguments: the <code>resolve()</code> function is called if the operation is successful, and the
+            <code>reject()</code> function is called if the operation fails.</p>
+
+        <h4>IMPORTANT</h4>
+
+        <p>A closure is a reference to a variable that was created inside the scope of another function, but is then
+            kept alive and used in another part of the program. Whenever a function is defined inside another function,
+            the inner function will have access to any variables that are declared in the outer function's scope.</p>
+
+        <h3>Pure Functions</h3>
+
+        <p>A key aspect of functional programming is its use of pure functions. A pure function is a function that
+            adheres to the following rules:</p>
+
+        <ul>
+            <ol>The return value of a pure function should only depend on the values provided as arguments. It doesn't
+                rely on values from somewhere else in the program.</ol>
+
+            <ol>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program.
+                It only makes non-destructive data transformations and returns new values, rather than altering any of
+                the underlying data.</ol>
+
+            <ol>Referential transparency. Given the same arguments, a pure function will always return the same result.
+            </ol>
+        </ul>
+
+        <p>In order to follow these rules, any pure function must have:<p>
+
+                <ul>
+                    <li>At least one argument; otherwise the return value must depend on something other than the
+                        arguments of the function, breaking the first rule</li>
+                    <li>A return value; otherwise there’s no point in the function (unless it has changed something else
+                        in the program – in which case, it’s broken the 'no side-effects' rule).</li>
+                </ul>
+
+                <h3>Higher-Order Functions</h3>
+
+                <p>Higher-order functions are functions that accept another function as an argument, or return another
+                    function as a result, or both.</p>
+
+                <p>Closures are used extensively in higher-order functions as they allow us to create a generic function
+                    that can be used to then return more specific functions based on its arguments. This is done by
+                    creating a closure around a function's arguments that keeps them 'alive' in a return function.</p>
+
+                <h3>Currying</h3>
+
+                <p>When not all parameters are supplied to a function, it is said to be curried, and it returns another
+                    function that keeps the arguments already provided while expecting the remaining arguments that were
+                    omitted when the original function was called. Only after all of the expected parameters have been
+                    provided is a final result produced.</p>
+
+                <p>Higher-order functions that can return partially applied functions are used in currying. Because they
+                    return a function, all curried functions are higher-order functions, but not all higher-order
+                    functions are curried.</p>
+
+                <p>Currying is a technique for turning a single function into a series of functions. This is useful if
+                    you frequently use the same parameter while invoking a function.</p>
+
+
+                <hr>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
