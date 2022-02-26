@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 8 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 8 - Transforms, Transitions, Canvas, SVG, and Drag and Drop (Chp 8 & 12)</h1>
+        <h3 class="notes">Feb 26 2022</h3>
+    </header>
+    <main>
+        <h2>CSS Transforms and Transitions</h2>
+
+        <h3>Transforms</h3>
+
+        <p>The CSS3 <code>transform</code> property lets you lets you translate, rotate, scale, and/or skew any element
+            on the page.</p>
+
+        <h3>Translation</h3>
+
+        <p>Translation functions allow you to move elements left, right, up, or down. These functions are similar to the
+            behavior of <code>position</code>: relative; when declaring <code>top</code> and <code>left</code>, moving
+            elements up and down or left and right along the x and y axes.</p>
+
+        <p>The <code>translate(x,y)</code> function moves an element <code>x</code> from the left, and <code>y</code>
+            from the top:</p>
+
+        <p>transform: translate(45px, -45px);</p>
+
+        <p>If you only want to move an element vertically or horizontally, you can use the translatex or translatey
+            functions respectively.</p>
+
+        <h3>Scaling</h3>
+
+        <p>The scale(x,y) function scales an element by the defined factors horizontally then vertically. If only one
+            value is provided, it will be used for both the x and y values. You can also use the scaleX(x) or scaleY(y)
+            functions</p>
+
+        <p>transform: scale(1.5, 0.25);</p>
+
+        <h3>Rotation</h3>
+
+        <p>The <code>rotate()</code> function rotates an element around the point of origin by a specified angle value.
+        </p>
+
+        <h3>Skew</h3>
+
+        <p>The <code>skew(x,y)</code> function specifies a skew along the x and y axes. As you’d expect, the x specifies
+            the skew on the x axis, and the y specifies the skew on the y axis. If the second parameter is omitted, the
+            skew will only occur on the x axis. There are axis-specific versions of the skew transform: skewX() and
+            skewY().</p>
+
+        <p>transform: skew(15deg, 4deg);</p>
+
+
+        <h3>Origin</h3>
+
+        <p>You can control the origin from which your transforms are applied.</p>
+
+        <p>transform-origin: 0 0;</p>
+
+
+        <h2>Transitions</h2>
+
+        <p>Here are the steps to create a simple transition using only CSS:</p>
+
+        <ul>
+            <ol>Declare the original state of the element in the default style declaration.</ol>
+
+            <ol>Declare the final state of your transitioned element; for example, a <code>:hover</code> state.</ol>
+
+            <ol>Include the transition functions in your default style declaration using the transition properties,
+                including: transition-property, transition-duration, transition-timing-function, and transition-delay.
+                We’ll look at each of these and how they work shortly.</ol>
+        </ul>
+
+        <p>transition-property: transform;</p>
+
+        <h3>transition-duration</h3>
+
+        <p>Sets how long the transition will take and specify this either in seconds (s) or milliseconds (ms).</p>
+
+        <p>transition-duration: 0.2s;</p>
+
+        <h3>transition-timing-function</h3>
+
+        <p>Lets you control the pace of the transition in even more granular detail. The most common timing functions
+            include the key terms ease, linear, ease-in, ease-out, or ease-in-out.</p>
+
+
+        <h2>Canvas, SVG, and Drag and Drop</h2>
+
+        <p>Added a separate HTML for the Canvas exercises.</p>
+        <hr>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
