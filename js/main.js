@@ -5,7 +5,7 @@ window.onload = function () {
 		{
 			label: 'Week 9 Notes',
 			url: '/wdd330portfolio/week09/'
-		
+		},
 		{
 			label: 'Week 8 Notes',
 			url: '/wdd330portfolio/week08/'
