@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:invalid {
+            border: 2px dashed red;
+        }
+
+        input:invalid:required {
+            background-image: linear-gradient(to right, pink, lightgreen);
+        }
+
+        input:valid {
+            border: 2px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form id="form2">
+        <label for="choose">Would you prefer a banana or cherry?</label>
+        <input id="choose" type="text" name="i_like" required pattern="[Bb]anana|[Cc]herry"
+            oninvalid="this.setCustomValidity('Please fill out this field')" oninput="setCustomValidity('')">
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
+
+<!--Added Regular Expressions to the answer-->

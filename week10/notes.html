@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Week 9 Notes</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<li><a href="../index.html">Home</a></li>
+
+<body>
+    <header>
+        <h1>Week 9 - The Window Object and HTML5 APIs (Chp 9 & 14)</h1>
+        <h3 class="notes">Mar 5 2022</h3>
+    </header>
+    <main>
+        <h2>Browser Object Model</h2>
+
+    <p>The BOM properties and methods are made available through the <code>window</code> object.</p>
+
+    <p>Global variables are actual properties of a global object. In a browser environment, the global object is the
+        window object.</p>
+
+    <h3>Dialogs</h3>
+
+    <p>window.alert() will pause the execution of the program and display a message in a dialog box.</p>
+
+    <p>window.confirm() method will stop the execution of the program and display a confirmation dialog. It returns a
+        true or false boolean.</p>
+
+    <p>window.prompt() method will stop the execution of the program and displays a dialog that shows a message provided
+        as an argument. The user can input data and will be returned.</p>
+
+    <p>window.location.href method returns the full URL as a string. It can also be changed by assignment (using the =
+        sign). If this is done, the page will be reloaded using the new property.</p>
+
+
+    <p>window.location.protocol returns a string describing the protocol used (such as http, https, pop2, ftp etc.).</p>
+
+    <p>The host property returns a string describing the domain of the current URL and the port number.</p>
+
+    <p>The hostname property returns a string describing the domain of the current URL.</p>
+
+    <p>The port property returns a string describing the port number.</p>
+
+    <p>The pathname property returns a string of the path that follows the domain.</p>
+
+    <p>The origin property returns a string that shows the protocol and domain where the current page originated from.
+    </p>
+
+    <p>The window.location object also has the following methods:</p>
+
+    <ul>
+        <li>The reload() method can be used to force a reload of the current page.</li>
+        <li>The assign() method can be used to load another resource from a URL provided as a parameter.</li>
+        <li>The replace() method is almost the same as the assign() method, except the current page will not be stored
+            in the session history, so the user will be unable to navigate back to it using the back button.</li>
+        <li>The toString() method returns a string containing the whole URL.</li>
+    </ul>
+
+    <h3>Controlling Windows</h3>
+
+    <ul>
+        <li>The window.open() method can be used to open a new window.</li>
+        <li>The .close() method can be used to close a window.</li>
+        <li>The window.moveTo(0,0) method takes two parameters that are the X and Y coordinates of the screen that the
+            window is to be moved to.</li>
+        <li>The window.resizeTo(100,100) method takes two parameters that specify the width and height of the resized
+            window’s dimensions.</li>
+    </ul>
+
+
+    <h3>Document Object</h3>
+
+    <ul>
+        <li>The write('hello') method simply writes a string of text to the page. It can also be used within a document
+            inside script tags to inject a string into the markup.This will not overwrite the rest of the HTML on the
+            page. </li>
+        <li> The document.cookie property creates a cookie,
+            which can be assigned to JavaScript’s “cookie jar”
+            .Assigning another cookie to it won’ t overwrite the entire property,
+            it will just append it to the end of the string
+            .A cookie’ s value can be changed by reassigning it to document
+            .cookie using the same name but a different value.To see the current contents of the cookie jar,
+            simply enter document.cookie. </li>
+        <li> We can use the split method to
+            break the string into an array containing each name / value pair, then use a
+            for of loop to iterate through the array. </li>
+        <p>
+            const cookies = document.cookie.split("; "); <br>
+            for (crumb of cookies) {
+            <br>
+            const [key, value] = crumb.split("="); <br>
+            console.log(`The value of ${key} is ${value}`);
+            } <br>
+        </p>
+        <li> Cookies can be made persistent― that is,
+            lasting beyond the browser session― by adding "; expires=date"
+            to the end of the cookie when it’ s set, where date is a date value in
+            the UTC String format Day,
+            DD -
+            Mon - YYYY HH: MM: SS GMT.To remove a cookie, you need to set it to
+            expire at a time in the past
+            . </li>
+        <p>
+            const expiryDate = new Date(); <br>
+            const tomorrow = expiryDate.getTime() + 1000 * 60 * 60 * 24; <br>
+            expiryDate.setTime(tomorrow); <br>
+            <br>
+            document.cookie = `name=Batman; expires=${
+            expiryDate.toUTCString()}`; <br>
+        </p>
+    </ul>
+
+    <h3> Timing Functions </h3>
+    <ul>
+        <li> The window.setTimeout() method
+            accepts a callback to a
+
+            function as its first parameter
+            and a number of milliseconds as
+            its second parameter. </li>
+        <li>
+            The window.setInterval()
+            method works in a similar
+            way to window.setTimeout(),
+            except that it will
+            repeatedly invoke the
+            callback
+
+            function after every given
+            number of milliseconds.
+        </li>
+        <li> The
+            setTimeOut() and
+            setInterval() methods
+            can be used to animate
+            elements on a web page.
+        </li>
+    </ul>
+
+    <h3> The - data
+        attribute </h3>
+    <p> The
+        data -
+        attribute is
+        a way of
+        embedding
+        data in
+        a web page
+        using custom
+        attributes
+        that are
+        ignored by
+        the browser
+        .They’ re
+        also private
+        to a page,
+        so are not
+        intended to
+        be used by
+        an external
+        service–
+        their sole
+        purpose is
+        to be used
+        by a
+        JavaScript
+        program
+        . </p>
+    <p>
+        The data
+        - powers
+        attribute
+        can be
+        accessed
+        using
+        the
+        following
+        code:
+    </p>
+    <p>
+        <div id='hero' data - powers='flight superSpeed'>
+            <br>
+            Superman
+            <br>
+        </div> <br>
+        <br>
+        const
+        superman
+        =
+        document.getElementById('hero');
+        <br>
+        const
+        powers
+        =
+        superman.dataset.powers;
+    </p>
+    <h3>
+        HTML5
+        APIs
+    </h3>
+    <p>
+        To
+        save
+        a
+        value
+        locally,
+        use:
+    </p>
+    <br>
+    <p>
+        localStorage.setItem('name',
+        'Walter
+        White');
+    </p>
+    <br>
+    <br>
+    <p>
+        Closing
+        the
+        browser
+        will
+        not
+        remove
+        the
+        stored
+        value:
+    </p>
+    <br>
+    <p>
+        localStorage.getItem('name');
+    </p>
+    <br>
+    <br>
+    <p>
+        To
+        change
+        its
+        value,
+        we
+        reference
+        it
+        again:
+    </p>
+    <p>
+        localStorage.name
+        =
+        'Heisenberg';
+        <br>
+        console.log(localStorage.name);
+    </p>
+    <br>
+    <br>
+    <p>
+        To
+        remove
+        the
+        local
+        storage:
+    </p>
+    <p>
+        localStorage.removeItem('name');
+    </p>
+    <br>
+    <br>
+    <p>
+        To
+        completely
+        remove
+        everything
+        stored
+        in
+        local
+        storage:
+    </p>
+    <p>
+        localStorage.clear();
+    </p>
+        <p>Added a separate HTML for the Animation exercises.</p>
+        <hr>
+    </main>
+    <footer> &copy; 2022 | Portfolio | Diego Vargas </footer>
+</body>
+
+</html>
