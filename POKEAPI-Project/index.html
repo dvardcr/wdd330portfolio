@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="pokedex.js" type="module" defer></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="poke-selection">
+            <select id="selectPokemon">
+                <option value="">Choose a Pokemon</option>
+            </select>
+            <button>I choose you</button>
+        </div>
+        <div data-poke-card class="poke-card">
+            <div data-poke-id class="poke-id"></div>
+            <div data-poke-name class="poke-name">Pokedex</div>
+            <div data-poke-img-container class="img-container">
+                <img data-poke-img class="poke-img" src="./pokeball.jpg" />
+            </div>
+            <div data-poke-types class="poke-types"></div>
+            <div data-poke-abilities class="poke-abilities"></div>
+            <div data-poke-weight class="poke-weight"></div>
+            <div data-poke-height class="poke-height"></div>
+            <div data-poke-stats class="poke-stats"></div>
+            <div data-poke-description class="poke-description"></div>
+        </div>
+    </div>
+</body>
+
+</html>

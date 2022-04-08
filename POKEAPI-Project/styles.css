@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    max-width: 600px;
+    max-height: 800px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "poke-id"
+        "poke-name"
+        "img-container"
+        "poke-types"
+        "poke-abilities"
+        "poke-weight"
+        "poke-height"
+        "poke-stats"
+        "poke-description"
+        "poke-selection";
+}
+
+.poke-card {
+    width: 90%;
+    height: 110%;
+    border: solid 1px lightgray;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #e5cc2a, #e6c01e, #e7b411, #e7a804, #e69b00, #e68f00, #e48200, #e27500);
+    box-shadow: -2px -2px 10px rgba(0, 0, 0, .25) inset, 2px 2px 10px white inset;
+}
+
+.poke-card:before {
+    content: "";
+    display: block;
+    padding-top: 10px;
+}
+
+.poke-selection {
+    grid-area: poke-selection;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 2;
+    padding: 20px;
+    border: solid 1px lightgray;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #e5cc2a, #e6c01e, #e7b411, #e7a804, #e69b00, #e68f00, #e48200, #e27500);
+    box-shadow: -2px -2px 10px rgba(0, 0, 0, .25) inset, 2px 2px 10px white inset;
+}
+
+/**/
+
+.poke-selection select {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.poke-selection button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #6CBCDD;
+    color: white;
+    height: 30px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    box-shadow: -2px -2px 10px rgba(0, 0, 0, .25) inset, 2px 2px 10px white inset;
+}
+
+/**/
+
+.poke-id {
+    grid-area: poke-id;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.poke-name {
+    grid-area: poke-name;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.img-container {
+    grid-area: img-container;
+    text-align: center;
+    background: linear-gradient(90deg, #e5cc2a, #e6c01e, #e7b411, #e7a804, #e69b00, #e68f00, #e48200, #e27500);
+}
+
+.img-container img {
+    height: 180px;
+    width: 180px;
+    border: solid 1px lightgray;
+    border-radius: 180px;
+    margin: 20px;
+    background-color: white;
+    animation: wiggle 4s linear infinite;
+}
+
+/**/
+
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+/**/
+
+.poke-types {
+    grid-area: poke-types;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+.poke-abilities {
+    grid-area: poke-abilities;
+}
+
+div ul {
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    display: inline-block;
+    list-style: inside;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+div ul li {
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.poke-weight {
+    grid-area: poke-weight;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.poke-height {
+    grid-area: poke-height;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.poke-stats {
+    grid-area: poke-stats;
+    font-family: 'Montserrat', sans-serif;
+    width: 40%;
+    padding-bottom: 20px;
+}
+
+.poke-stats .element {
+    display: table;
+    display: table-row;
+}
+
+.element .stat {
+    display: table-cell;
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    text-transform: uppercase;
+    padding: 5px 5px 5px 5px;
+    border: solid 2px black;
+}
+
+.element .num {
+    display: table-cell;
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    border: solid 2px black;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.poke-description {
+    grid-area: poke-description;
+    font-family: 'Roboto Mono', monospace;
+    padding: 30px;
+    margin: 5px auto;
+    text-align: justify;
+    border: solid 1px #8f9fb8;
+    border-radius: 5px;
+    color: #7FC1B7;
+    background-color: black;
+}
