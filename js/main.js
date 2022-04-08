@@ -3,6 +3,10 @@ window.onload = function () {
 
 	const tableOfContents = [
 		{
+			label: 'Final Project',
+			url: '/wdd330portfolio/POKEAPI-Project/'
+		},
+		{
 			label: 'Week 10 Notes',
 			url: '/wdd330portfolio/week10/'
 		},
